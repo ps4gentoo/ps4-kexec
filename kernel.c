@@ -254,7 +254,7 @@ static int patch_pmap_check(void)
 
     for (p = (u8*)kern.pmap_protect;
          p < ((u8*)kern.pmap_protect + 0x500); p++) {
-        #ifdef PS4_4_55 // changed to 55 from 74
+        #ifdef PS4_6_20 // changed to 62 from 74
         if (!memcmp(p, "\xB8\x06\x00\x00\x00\xC4", 6)) {
             p[1] = 0;
             kern.printf("pmap_protect patch successful (found at %p)\n", p);
